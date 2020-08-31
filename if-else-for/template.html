@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="template.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-if="title">Hello thien badboy</h1>
+      <h1 v-else>Hello thien goodboy</h1>
+      <ul class="menu">
+        <li @click="login">Dang nhap</li>
+        <li @click="register">Dang ky</li>
+      </ul>
+      <div class="login" v-if="tabsSelected==='login'">
+        <h2>Form dang nhap</h2>
+        <form action="">
+          <input type="text" placeholder="userName" />
+          <input type="password" placeholder="userPass" />
+          <input type="submit" value="Dang nhap" />
+        </form>
+      </div>
+      <div class="registration" v-else-if="tabsSelected==='registration'">
+        <h2>Form dang nhap</h2>
+        <form action="">
+          <input type="text" placeholder="userName" />
+          <input type="password" placeholder="userPass" />
+          <input type="text" placeholder="againPass " />
+          <input type="submit" value="Dang ky" />
+        </form>
+      </div>
+      <div class="content">
+        <div
+          class="item-content"
+          v-for="(item, index) in checkActive"
+          v-bind:key="index"
+        >
+          <h1>{{ item.title }}</h1>
+          <p>{{ item.content }}</p>
+        </div>
+      </div>
+      <ul>
+        <li v-for="(value, key) in object">
+          {{ key }} : {{ value}}
+        </li>
+      </ul>
+    </div>
+    <script src="template.js"></script>
+  </body>
+</html>

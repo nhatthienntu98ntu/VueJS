@@ -1,0 +1,29 @@
+.menu {
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 5px;
+    border: 1px solid black;
+}
+
+.login, .registration {
+    padding: 10px 20px;
+    border: 1px solid blue;
+    margin-top: 20px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content .item-content {
+    padding: 0;
+    margin: 0;
+    width: 50%;
+    text-align: center;
+}

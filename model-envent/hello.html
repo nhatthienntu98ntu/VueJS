@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <link rel="stylesheet" href="hello.css" />
+</head>
+
+<body>
+  <div id="app">
+
+    <p>{{ title }}</p>
+    <h2>{{ say(" nhat thien") }}</h2>
+<!-- 
+    <div class="box" @mousemove="mouseMove">
+      <p>ClientX: {{ clientX }}</p>
+      <p>ClientY: {{ clientY }}</p>
+      <div class="boxchild" @mousemove.stop="handMouseMoveChild"></div>
+    </div>
+
+    <form action="" @submit.prevent="handSubmitForm">
+      <label>FirstName: </label>
+      <input v-model="firstName" type="text" placeholder="first name">
+      <label>LastName: </label>
+      <input v-model="lastName" type="text" placeholder="lastname">
+      <input type="submit" value="Dang nhap">
+    </form>
+
+    <div>
+      <p>FirstName: {{ firstName }}</p>
+      <p>LasttName: {{ lastName }}</p>
+    </div>
+    
+    <button @click="changeActive">ChangeActive </button>
+    <button @click="changeError">ChangeError</button>
+    <div class="changeClass" v-bind:class="{active: active, error: error}">
+    </div> -->
+
+    <div class="product">
+      <div class="image">
+        <img
+          :src="getImageProduct"
+          alt="" />
+      </div>
+      <div class="details">
+        <h1>{{ ten }}</h1>
+        <h2>{{  formatFinalPrice}}</h2>
+        <h2>Sale: {{ formatOriginalPrice }} -{{sale * 100}}%</h2>
+        <!-- v-bind gắn giá trị cho các thuộc tính trong thẻ html
+              Nếu không có v-bind nó sẽ hiểu {{ link }} là một đoạn text
+          -->
+        <a :href="link" v-bind:target="target">Xem sản phẩm</a>
+        <h4 v-if="getSoLuongProduct > 0">Còn lại: {{ getSoLuongProduct }} sản phẩm</h4>
+        <h4 v-else>Sản phẩm đã hết hàng!</h4>
+        <br />
+        <input @click="removeProduct" type="button" value="Bớt" /> {{
+          soluong }}
+        <input @click="addProduct" type="button" value="Thêm">
+          <h4>Màu sắc: {{getColorProduct}}</h4>
+          <div class="detailsProduct">
+            <div class="item-img" 
+              :class="{activee: selectedProduct === index}"
+              v-for="(img, index) in listProductDetails" 
+              :key="index">
+              <img :src="img.image" :alt="img.textColor" @click="changeSelectedProduct(index)">
+            </div>
+          </div>
+      </div>
+      
+    </div>
+    <p>{{ ten }}</p>
+    <p>{{ reverse }}</p>
+  </div>
+  </div>
+  <script src="hello.js"></script>
+</body>
+
+</html>

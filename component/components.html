@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ol>
+        <!-- groceryList là mảng dữ liệu trong data
+            todo = item : gán props bằng phần tử trong mảng
+            key lấy theo id, key mõi item phải khác nhau
+        -->
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+    </div>
+
+    <script src="components.js"></script>
+  </body>
+</html>
